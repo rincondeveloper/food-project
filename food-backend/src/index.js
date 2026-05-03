@@ -15,7 +15,7 @@ app.use(cors({
   origin: ['https://food-project-plum.vercel.app', 'http://localhost:5173']
 }));
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 app.use('/api/productos', productosRoutes);
 app.use('/api/pedidos', pedidosRoutes);
 app.use('/api/auth', authRoutes);
