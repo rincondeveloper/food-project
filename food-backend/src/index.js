@@ -7,15 +7,12 @@ const pedidosRoutes = require('./routes/pedidos');
 const authRoutes = require('./routes/auth');
 const uploadsRoutes = require('./routes/uploads');
 
-const uploadsPath = path.join(__dirname, 'uploads');
-console.log('Uploads path:', uploadsPath);
-
 const app = express();
 app.use(cors({
   origin: ['https://food-project-plum.vercel.app', 'http://localhost:5173']
 }));
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/productos', productosRoutes);
 app.use('/api/pedidos', pedidosRoutes);
 app.use('/api/auth', authRoutes);
