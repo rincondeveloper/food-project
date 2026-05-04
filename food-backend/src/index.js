@@ -8,9 +8,7 @@ const authRoutes = require('./routes/auth');
 const uploadsRoutes = require('./routes/uploads');
 
 const app = express();
-app.use(cors({
-  origin: ['https://food-project-plum.vercel.app', 'http://localhost:5173']
-}));
+app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/productos', productosRoutes);
